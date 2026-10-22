@@ -1,0 +1,6 @@
+references/
+tmp/
+qa/
+*.tar.gz
+.env*
+node_modules/
