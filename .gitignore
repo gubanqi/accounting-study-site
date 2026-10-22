@@ -5,3 +5,5 @@ qa/
 .env*
 node_modules/
 patch_review.py
+__pycache__/
+update_interface.py

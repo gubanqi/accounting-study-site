@@ -224,5 +224,8 @@ for c in chapters:
 data={'title':'会计自习室','edition':'《初级会计学》第9版','updated':'2026-10-22','version':1,
       'examNote':'第1周课件第2页：期末闭卷，题型包括选择题、判断题、业务计算题和简答题。选题依据课件与已提供题图，不代表老师划定重点或官方预测。',
       'chapters':chapters}
+from upgrade_content import apply,write_report
+data=apply(data)
+write_report(data)
 (DIST/'chapters.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps({'chapters':len(chapters),'questions':sum(len(c['questions']) for c in chapters),'counts':[len(c['questions']) for c in chapters]},ensure_ascii=True))
