@@ -7,7 +7,7 @@
   }
   function stats(questions, records){
     const s={total:questions.length,attempted:0,independent:0,seen:0,wrong:0,self:0};
-    for(const q of questions){const r=records[q.id]||{};const a=r.firstAttempt;if(a){s.attempted++;if(a.method==='auto'&&a.correct&&!a.seenBeforeSubmit)s.independent++;if(a.method==='self'&&a.correct!==null)s.self++;}if(r.seen)s.seen++;if(r.submitted&&r.currentCorrect===false)s.wrong++;}
+    for(const q of questions){const r=records[q.id]||{};const a=r.firstAttempt;if(a){s.attempted++;if(a.method==='auto'&&a.correct&&!a.seenBeforeSubmit)s.independent++;if(a.method==='self'&&a.correct!==null)s.self++;}if(r.seen)s.seen++;if(r.needsReview===true||(r.needsReview===undefined&&r.submitted&&r.currentCorrect===false))s.wrong++;}
     return s;
   }
   const api={grade,stats};

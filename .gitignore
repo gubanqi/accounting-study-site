@@ -4,3 +4,4 @@ qa/
 *.tar.gz
 .env*
 node_modules/
+patch_review.py
